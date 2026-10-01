@@ -1146,13 +1146,13 @@ fun QuantityDialog(m: Medicine, stock: Int, mode: String,
                     style = MaterialTheme.typography.bodySmall,
                     color = MaterialTheme.colorScheme.onSurfaceVariant
                 )
-                Text(
+                   Text(
                     "In Stock : $stock",
                     color = if (stock <= 0) MaterialTheme.colorScheme.error else MaterialTheme.colorScheme.primary,
                     fontWeight = FontWeight.Bold,
                     modifier = Modifier.padding(vertical = 4.dp)
-                Row(modifier = Modifier.padding(vertical = 4.dp), horizontalArrangement = Arrangement.spacedBy(6.dp)) {
-
+                )
+                Row(Modifier.padding(vertical = 4.dp)) {
                     FilterChip(selected = !box, onClick = { box = false }, label = { Text("Sell Quantity (pcs)") })
                     FilterChip(selected = box, onClick = { box = true }, label = { Text("Sell Box") })
                 }
