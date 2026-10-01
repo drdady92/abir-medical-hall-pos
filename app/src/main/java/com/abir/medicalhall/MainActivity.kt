@@ -60,6 +60,7 @@ import androidx.navigation.NavGraph.Companion.findStartDestination
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.*
 import androidx.room.*
+import androidx.room.migration.Migration
 import androidx.sqlite.db.SupportSQLiteDatabase
 import com.google.mlkit.vision.barcode.BarcodeScanning
 import com.google.mlkit.vision.common.InputImage
@@ -1150,7 +1151,7 @@ fun QuantityDialog(m: Medicine, stock: Int, mode: String,
                     color = if (stock <= 0) MaterialTheme.colorScheme.error else MaterialTheme.colorScheme.primary,
                     fontWeight = FontWeight.Bold,
                     modifier = Modifier.padding(vertical = 4.dp)
-                )
+                Row(modifier = Modifier.padding(vertical = 4.dp), horizontalArrangement = Arrangement.spacedBy(6.dp)) {
                 Row(horizontalArrangement = Arrangement.spacedBy(6.dp), Modifier.padding(vertical = 4.dp)) {
                     FilterChip(selected = !box, onClick = { box = false }, label = { Text("Sell Quantity (pcs)") })
                     FilterChip(selected = box, onClick = { box = true }, label = { Text("Sell Box") })
