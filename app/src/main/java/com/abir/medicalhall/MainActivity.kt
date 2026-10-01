@@ -727,7 +727,7 @@ fun CountBadge(n: Int) {
 }
 
 @Composable
-fun Keypad(onKey: (String) -> Unit, modifier: Modifier = Modifier) {
+fun Keypad(modifier: Modifier = Modifier, onKey: (String) -> Unit) {
     val keys = listOf("7", "8", "9", "4", "5", "6", "1", "2", "3", "C", "0", ".")
     Column(modifier) {
         keys.chunked(3).forEach { rowKeys ->
@@ -1246,7 +1246,7 @@ fun PaymentDialog(vm: ShopViewModel, onDone: (Sale, List<CartItem>) -> Unit, onD
                 }
                 Text("Bill Total : ${money(total)}", fontWeight = FontWeight.SemiBold,
                     modifier = Modifier.padding(vertical = 6.dp))
-                Keypad(::press)
+                                Keypad(onKey = { press(it) })
             }
         },
         confirmButton = {
