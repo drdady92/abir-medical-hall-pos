@@ -1152,7 +1152,7 @@ fun QuantityDialog(m: Medicine, stock: Int, mode: String,
                     fontWeight = FontWeight.Bold,
                     modifier = Modifier.padding(vertical = 4.dp)
                 Row(modifier = Modifier.padding(vertical = 4.dp), horizontalArrangement = Arrangement.spacedBy(6.dp)) {
-                Row(horizontalArrangement = Arrangement.spacedBy(6.dp), Modifier.padding(vertical = 4.dp)) {
+
                     FilterChip(selected = !box, onClick = { box = false }, label = { Text("Sell Quantity (pcs)") })
                     FilterChip(selected = box, onClick = { box = true }, label = { Text("Sell Box") })
                 }
